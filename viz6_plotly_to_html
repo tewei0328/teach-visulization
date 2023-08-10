@@ -1,0 +1,12 @@
+import plotly
+import pandas as pd
+# Load data
+df = pd.read_csv("finance-charts-apple.csv")
+df.columns = [col.replace("AAPL.", "") for col in df.columns]
+print(df)
+
+import plotly.graph_objects as go
+line1 = go.Scatter(x=df['Date'], y=df['Close'], name='Close')
+fig  = go.Figure(line1)
+fig.show()
+plotly.offline.plot(fig, filename='lifeExp.html')
