@@ -11,3 +11,8 @@ line1 = go.Scatter(x=df['Date'], y=df['Close'], name='Close')
 fig  = go.Figure(line1)
 fig.show()
 plotly.offline.plot(fig, filename='lifeExp.html')
+
+#x=plotly.offline.plot(fig, include_plotlyjs=False, output_type='div')
+#text_file = open("sample.txt", "w")
+#n = text_file.write(x)
+#text_file.close()
